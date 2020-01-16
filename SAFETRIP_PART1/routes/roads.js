@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { getRoads } = require("../controllers/roads");
+const { getRoads, addRoads } = require("../controllers/roads");
 
 router.get("/roads", getRoads);
+router.post("/roads", addRoads);
 
 module.exports = router;
