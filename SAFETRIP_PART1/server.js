@@ -19,6 +19,9 @@ app.use(express.json());
 // Enable Cors
 app.use(cors());
 
+// Set Static folder
+app.use(express.static(path.join(__dirname, "views"))); //_dirname means current directory
+
 // Routes
 app.use("/api/v1", routes);
 

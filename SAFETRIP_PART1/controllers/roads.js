@@ -17,7 +17,8 @@ const {
 } = HttpStatus;
 
 // Read/Get Roads
-exports.getRoads = async(req, res) => {
+// Every async functions must have 'next'
+exports.getRoads = async(req, res, next) => {
     try {
         const roads = await Road.find();
         return res.status(OK).json({
@@ -35,7 +36,7 @@ exports.getRoads = async(req, res) => {
 };
 
 // Create Roads
-exports.addRoads = async(req, res) => {
+exports.addRoads = async(req, res, next) => {
     try {
         const roads = await Road.create(req.body);
         console.log(req.body);
